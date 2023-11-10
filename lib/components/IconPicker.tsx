@@ -23,12 +23,12 @@ import {
   TooltipProps,
 } from '@mui/material'
 import { ChangeEvent, useEffect, useState } from 'react'
-import { iconList } from '../types/iconList'
-import IconPickerItem from './IconPickerItem'
-import { IconType, IconSize } from '../types/iconType'
-import React from 'react'
 
-interface IconPickerProps {
+import { iconList } from '../types/iconList'
+import { IconSize, IconType } from '../types/iconType'
+import { IconPickerItem } from './IconPickerItem'
+
+export interface IconPickerProps {
   value: IconType
   name?: string
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
@@ -178,7 +178,10 @@ export function IconPicker({
                 iconButtonProps={iconButtonProps}
                 iconListIconSize={iconListIconSize}
                 onClick={(value: IconType) => {
-                  !!handleFieldChange && handleFieldChange({ target: { value, name } } as ChangeEvent<HTMLInputElement>)
+                  !!handleFieldChange &&
+                    handleFieldChange({
+                      target: { value, name },
+                    } as ChangeEvent<HTMLInputElement>)
                   setShowIconListModal(false)
                   setSearch('')
                 }}
@@ -208,6 +211,8 @@ export function IconPicker({
   )
 }
 
+const defaultIconSize: IconSize = 2
+
 IconPicker.defaultProps = {
   showSearch: false,
   searchPlaceholder: 'Search',
@@ -216,6 +221,6 @@ IconPicker.defaultProps = {
   dialogTitleText: 'FontAwesome Icon Picker',
   dialogCancelText: 'Cancel',
   pickerButtonIconSize: 2,
-  iconListIconSize: 2,
+  iconListIconSize: defaultIconSize,
   name: 'icon',
 }

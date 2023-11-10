@@ -1,8 +1,8 @@
 import { Box, BoxProps, Button, ButtonProps, Tooltip, TooltipProps, useTheme } from '@mui/material'
-import { IconType, IconSize } from '../types/iconType'
-import React from 'react'
 
-interface IconPickerItemProps {
+import { IconSize, IconType } from '../types/iconType'
+
+export interface IconPickerItemProps {
   icon: IconType
   onClick: (icon: IconType) => void
   iconListContainerProps?: BoxProps
