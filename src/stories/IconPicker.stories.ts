@@ -6,13 +6,48 @@ const meta: Meta<typeof IconPicker> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs']
+  tags: ['autodocs'],
 }
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {
+export const Base: Story = {
+  args: {},
+} satisfies Meta<typeof IconPicker>
+
+export const PinkButton: Story = {
   args: {
+    formControlProps: { sx: {background: 'pink'} },
   },
 } satisfies Meta<typeof IconPicker>
+
+export const BlueButtonPurpleDialog: Story = {
+  args: {
+    formControlProps: { sx: { background: 'lightblue' } },
+    dialogProps: { PaperProps: { style: { backgroundColor: '#c2b0e2' } } },
+  },
+} satisfies Meta<typeof IconPicker>
+
+export const GreenButtonSize2Icons: Story = {
+  args: {
+    formControlProps: { sx: { background: 'lightgreen' } },
+    iconListIconSize: 2,
+  },
+} satisfies Meta<typeof IconPicker>
+
+export const GreenButtonSize5Icons: Story = {
+  args: {
+    formControlProps: { sx: { background: 'lightgreen' } },
+    iconListIconSize: 5,
+  },
+} satisfies Meta<typeof IconPicker>
+
+export const WithSearch: Story = {
+  args: { showSearch: true },
+} satisfies Meta<typeof IconPicker>
+
+export const EightIconsPerPage: Story = {
+  args: { iconPerPage: 8 },
+} satisfies Meta<typeof IconPicker>
+
