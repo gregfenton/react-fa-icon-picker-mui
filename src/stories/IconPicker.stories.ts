@@ -47,6 +47,13 @@ export const WithSearch: Story = {
   args: { showSearch: true },
 } satisfies Meta<typeof IconPicker>
 
+export const PurpleDialogWithSearch: Story = {
+  args: {
+    dialogProps: { PaperProps: { style: { backgroundColor: '#c2b0e2' } } },
+    showSearch: true,
+  },
+} satisfies Meta<typeof IconPicker>
+
 export const EightIconsPerPage: Story = {
   args: { iconPerPage: 8 },
 } satisfies Meta<typeof IconPicker>
